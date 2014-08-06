@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <title>Jumbotron Template for Bootstrap</title>
-    @include('layouts/css')    
+    @include('layouts/css')
 </head>
 
 <body>
@@ -17,8 +17,6 @@
 
     @yield('content')
 
-    @include('layouts/footer')
-
-    @include('layouts/js')    
+    @include('layouts/js')
 </body>
 </html>

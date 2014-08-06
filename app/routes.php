@@ -12,3 +12,6 @@
 */
 
 Route::get('/', ['as'=>'home','uses'=>'HomeController@index']);
+
+Route::post('login', ['as'=>'login','uses'=>'AuthController@login']);
+Route::get('logout',['as'=>'logout', 'uses'=>'AuthController@logout']);
