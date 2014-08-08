@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>Seguimiento</title>
     @include('layouts/css')
 </head>
 

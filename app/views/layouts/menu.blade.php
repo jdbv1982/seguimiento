@@ -1,4 +1,3 @@
-@if(Auth::check())
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -10,16 +9,17 @@
             </button>
             <a class="navbar-brand" href="{{ route('home') }}">Seguimiento</a>
         </div>
+@if(Auth::check())
             <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->full_name; }} <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Cambiar Contraseña</a></li>
+                    <li><a href="{{ route('change') }}">Cambiar Contraseña</a></li>
                     <li class="divider"></li>
                     <li><a href="{{ route('logout') }}">Salir</a></li>
                 </ul>
             </li>
         </ul>
+@endif
     </div>
 </div>
-@endif
