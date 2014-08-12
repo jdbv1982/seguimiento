@@ -7,9 +7,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('home') }}">Seguimiento</a>
+            <a class="navbar-brand" href="{{ route('home') }}">.:: Seguimiento ::.</a>
         </div>
 @if(Auth::check())
+             <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistema <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('list-user') }}">Usuarios</a></li>
+                </ul>
+            </li>
+
+        </ul>
             <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->full_name; }} <b class="caret"></b></a>

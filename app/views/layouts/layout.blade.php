@@ -9,14 +9,19 @@
     <link rel="icon" href="../../favicon.ico">
     <title>Seguimiento</title>
     @include('layouts/css')
+    @yield('css')
 </head>
 
 <body>
 
     @include('layouts/menu')
 
-    @yield('content')
+    <div class="col-xs-10 col-xs-offset-1">
+        @yield('content')
+    </div>
 
     @include('layouts/js')
+
+    @yield('js')
 </body>
 </html>

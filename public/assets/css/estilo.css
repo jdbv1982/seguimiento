@@ -3,3 +3,48 @@ body {
   padding-top: 50px;
   padding-bottom: 20px;
 }
+
+.content{
+	width: 100%;
+	float: left;
+}
+
+/* Datatables estilos personalizado para el los toolbar */
+.search-entries{
+	text-align: right;
+}
+
+.dt-toolbar{
+	padding: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border: 1px solid #AAAAAA;
+	color: #222222;
+	background: #cccccc url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+	width: 100%;
+	margin-left: 0px;
+
+
+}
+
+.dt-entries-bar{
+	padding-top: 5px;
+	font-weight: normal;
+	border: 1px solid #AAAAAA;
+	color: #222222;
+	background: #cccccc url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+	width: 100%;
+	margin-left: 0px;
+}
+
+.dt-entries-footer{
+	padding: 5px 0;
+	font-weight: normal;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border: 1px solid #AAAAAA;
+	color: #222222;
+	background: #cccccc url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x;
+	width: 100%;
+	margin-left: 0px;
+}
