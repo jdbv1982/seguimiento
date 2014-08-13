@@ -95,7 +95,8 @@ return array(
 
     'attributes' => array(
         'full_name' => 'nombre completo',
-        'password'          => 'contraseña'
+        'password'          => 'contraseña',
+        'email'     => 'correo electronico'
 
     ),
 

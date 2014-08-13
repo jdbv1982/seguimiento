@@ -7,30 +7,14 @@
 
 	{{ Form::open(['route' => 'register-user', 'method'=>'POST','role'=>'form','novalidate'])}}
 
-	{{ App->make('field')->input('text','full_name') }}
-
-
-	<div class="form-group">
-		{{ Form::label('full_name','Nombre de Usuario') }}
-		{{ Form::text('full_name',null,['class'=>'form-control']) }}
-		{{ $errors->first('full_name','<p class="label label-danger">:message</p>') }}
-	</div>
-
-
-	<div class="form-group">
-		{{ Form::label('email','Correo Electronico') }}
-		{{ Form::email('email',null,['class'=>'form-control']) }}
-		{{ $errors->first('email','<p class="label label-danger">:message</p>') }}
-	</div>
-
-	<div class="form-group">
-		{{ Form::label('password','Contraseña') }}
-		{{ Form::password('password',['class'=>'form-control']) }}
-		{{ $errors->first('password','<p class="label label-danger">:message</p>') }}
-	</div>
+	{{ Field::text('full_name') }}
+	{{Field::email('email')}}
+	{{Field::password('password')}}
 
 	<p>
 		{{ Form::submit('Crear', ['class'=>'btn btn-success']) }}
+		{{ HTML::link('list', 'Cancelar', ['class'=>'btn btn-default']) }}
+
 	</p>
 
 	{{Form::close()}}
