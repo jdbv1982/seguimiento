@@ -127,7 +127,8 @@ return array(
 		'Barryvdh\Debugbar\ServiceProvider',
 
 		//Custom
-		'FollowUp\Components\FieldServiceProvider',
+		'FollowUp\Components\Field\FieldServiceProvider',
+		'FollowUp\Components\DataT\DatatableServiceProvider',
 	),
 
 	/*
@@ -196,7 +197,8 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
 
 		//custom
-		'Field'		=> 'FollowUp\Components\Field',
+		'Field'		=> 'FollowUp\Components\Field\Field',
+		'Datatable'	=> 'FollowUp\Components\DataT\Datatable',
 
 	),
 

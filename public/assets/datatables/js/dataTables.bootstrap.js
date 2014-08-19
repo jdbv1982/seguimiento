@@ -21,7 +21,7 @@ $.extend( true, DataTable.defaults, {
 	dom:
 		"<'row dt-entries-bar'<'col-xs-6 show-entries'l><'col-xs-6 search-entries'f>r>"+
 		"t"+
-		"<'row dt-entries-footer'<'col-xs-6'i><'col-xs-6 search-entries'p>>",
+		"<'row'<'col-xs-6'i><'col-xs-6 search-entries'p>>",
 	renderer: 'bootstrap'
 } );
 

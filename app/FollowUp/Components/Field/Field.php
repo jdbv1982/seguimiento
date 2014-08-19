@@ -1,4 +1,4 @@
-<?php namespace FollowUp\Components;
+<?php namespace FollowUp\Components\Field;
 
 
 use Illuminate\Support\Facades\Facade;

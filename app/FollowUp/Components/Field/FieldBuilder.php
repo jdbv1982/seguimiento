@@ -1,4 +1,4 @@
-<?php namespace FollowUp\Components;
+<?php namespace FollowUp\Components\Field;
 
 use Illuminate\Html\FormBuilder as Form;
 use Illuminate\View\Factory as View;
