@@ -14,7 +14,12 @@ class UserController extends BaseController{
 	}
 
 	public function listUsers(){
+		$user = User::find(1);
+
+		return $user->permisos;
+
 		$users = $this->userRepo->all();
+
 
 		return View::make('users/list', compact('users'));
 	}
