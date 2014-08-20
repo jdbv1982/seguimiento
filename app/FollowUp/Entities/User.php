@@ -5,6 +5,8 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
+use DB;
+
 
 class User extends \Eloquent implements UserInterface, RemindableInterface {
 
@@ -33,6 +35,21 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
 	public function permisos()
 	{
 	        return $this->belongsToMany("FollowUp\Entities\Permiso")->withPivot('permiso_id');
+	}
+
+	public function verificaPermiso($id, $permiso_id){
+		$permiso = DB::table('permiso_user')
+			->where('user_id','=',$id)
+			->where('permiso_id','=',$permiso_id,'AND')
+			->where('visible','=',1,'AND')
+			->get();
+
+
+		if(empty($permiso)){
+			return 'false';
+		}
+
+		return 'true';
 	}
 
 

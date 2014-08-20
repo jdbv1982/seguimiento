@@ -13,4 +13,6 @@ class UserRepo extends BaseRepo{
 		$user->available = true;
 		return $user;
 	}
+
+
 }

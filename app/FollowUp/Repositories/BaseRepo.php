@@ -1,5 +1,6 @@
 <?php namespace FollowUp\Repositories;
 
+use DB;
 
 
 abstract class BaseRepo {
@@ -19,6 +20,13 @@ abstract class BaseRepo {
 
 	public function find($id){
 		return $this->model->find($id);
+	}
+
+	public function getPermiso($user_id, $permiso_id){
+		return DB::table('permiso_user')
+			->where('user_id','=',$user_id)
+			->where('permiso_id','=',$permiso_id,'AND')
+			->get();
 	}
 
 }

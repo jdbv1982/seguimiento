@@ -28,7 +28,7 @@
 
 <p>
 	<button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-saved"></span></button>
-	<a href="{{ URL::to('usuarios/listado') }}" class="btn btn-default"><span class="glyphicon glyphicon-floppy-remove"></a>
+	<a href="{{ route('list-user') }}" class="btn btn-default"><span class="glyphicon glyphicon-floppy-remove"></a>
 </p>
 {{ Form::close() }}
 

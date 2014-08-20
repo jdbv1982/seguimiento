@@ -7,6 +7,7 @@ use FollowUp\Entities\User;
 
 use FollowUp\Managers\RegisterManager;
 
+
 class UserController extends BaseController{
 
 	protected $userRepo;
@@ -54,8 +55,10 @@ class UserController extends BaseController{
 	}
 
 	public function savePermisos($id){
-		dd($id);
-		return Input::all();
+		$permisos = Input::get('permiso');
+		$this->permisoRepo->savePermiso($id, $permisos);
+
+		return Redirect::route('permisos',$id);
 	}
 
 }
