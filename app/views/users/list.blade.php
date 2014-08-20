@@ -11,7 +11,8 @@
 		['Id','Nombre','Correo','Acciones'],
 		['id','full_name','email'],
 		$users,
-		'user'
+		'user',
+		'permisos'
 		)}}
 
 

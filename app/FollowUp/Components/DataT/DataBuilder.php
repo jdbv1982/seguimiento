@@ -20,9 +20,10 @@ class DataBuilder{
 		return 'fields/dtable';
 	}
 
-	public function datatable($idTable, $headers = array(), $names = array(), $data = array(), $routeEdit = null){
+	public function datatable($idTable, $headers = array(), $names = array(), $data = array(),
+					$routeEdit = null, $routePermisos = null, $tamaño=100){
 		$template = $this->buildDataTable();
 
-		return $this->view->make($template, compact('idTable','headers','names','data','routeEdit'));
+		return $this->view->make($template, compact('idTable','headers','names','data','routeEdit','routePermisos','tamaño'));
 	}
 }

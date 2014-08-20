@@ -32,7 +32,7 @@ class User extends \Eloquent implements UserInterface, RemindableInterface {
 
 	public function permisos()
 	{
-	        return $this->belongsToMany("FollowUp\Entities\Permiso");
+	        return $this->belongsToMany("FollowUp\Entities\Permiso")->withPivot('permiso_id');
 	}
 
 
