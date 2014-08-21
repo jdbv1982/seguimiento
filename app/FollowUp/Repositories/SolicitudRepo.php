@@ -9,7 +9,7 @@ class SolicitudRepo extends BaseRepo{
 	}
 
 	public function solicitudes(){
-		return Solicitud::with('respuesta','state','user')->get();
+		return Solicitud::with('respuesta','state','user','residencia','dirigidos','dirigidos.departamentos','tipo')->get();
 	}
 
 

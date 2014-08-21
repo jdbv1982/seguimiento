@@ -17,6 +17,7 @@ class CreatePermisoUserTable extends Migration {
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
 			$table->integer('permiso_id')->unsigned();
+			$table->boolean('visible');
 
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->foreign('permiso_id')->references('id')->on('permisos');

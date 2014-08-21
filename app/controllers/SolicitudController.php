@@ -11,11 +11,11 @@ class SolicitudController extends BaseController{
 	}
 
 	public function solicitudes(){
-
-		$solicitud = $this->solicitudRepo->find(1);
-		//return $solicitud->status->status;
-
 		$solicitudes = $this->solicitudRepo->solicitudes();
 		return View::make('solicitudes/list', compact('solicitudes'));
+	}
+
+	public function nueva(){
+		return View::make('solicitudes/nueva');
 	}
 }

@@ -16,7 +16,7 @@
 
     @include('layouts/menu')
 
-    <div class="col-xs-10 col-xs-offset-1">
+    <div class="col-xs-12">
         @yield('content')
     </div>
 
