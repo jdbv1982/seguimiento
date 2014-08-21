@@ -8,5 +8,9 @@ class SolicitudRepo extends BaseRepo{
 		return new Solicitud;
 	}
 
+	public function solicitudes(){
+		return Solicitud::with('respuesta','state','user')->get();
+	}
+
 
 }

@@ -15,7 +15,7 @@ class SolicitudController extends BaseController{
 		$solicitud = $this->solicitudRepo->find(1);
 		//return $solicitud->status->status;
 
-		$solicitudes = $this->solicitudRepo->all();
+		$solicitudes = $this->solicitudRepo->solicitudes();
 		return View::make('solicitudes/list', compact('solicitudes'));
 	}
 }
