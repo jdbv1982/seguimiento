@@ -13,7 +13,6 @@ abstract class BaseRepo {
 
 	abstract public function getModel();
 
-
 	public function all(){
 		return $this->model->all();
 	}
@@ -28,5 +27,11 @@ abstract class BaseRepo {
 			->where('permiso_id','=',$permiso_id,'AND')
 			->get();
 	}
+
+	public function lists($table,$campos = array('nombre','id')){
+		return DB::table($table)->lists($campos[0],$campos[1]);
+	}
+
+
 
 }

@@ -1,2 +1,3 @@
-    <link href="{{asset("assets/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
-    <link href="{{asset("assets/css/estilo.css") }}" rel="stylesheet">
+{{ HTML::style('assets/bootstrap/css/bootstrap.min.css') }}
+{{ HTML::style('assets/css/estilo.css') }}
+{{ HTML::style('assets/picker/css/jquery-ui.min.css') }}

@@ -1,2 +1,4 @@
-    <script src="{{asset("assets/js/jquery.js")}}"></script>
-    <script src="{{asset("assets/bootstrap/js/bootstrap.min.js")}}"></script>
+    {{ HTML::script('assets/js/jquery.js') }}
+    {{ HTML::script('assets/bootstrap/js/bootstrap.min.js') }}
+    {{ HTML::script('assets/picker/js/jquery-ui.min.js') }}
+
