@@ -21,12 +21,10 @@ class CreateCaracteristicasTable extends Migration {
 			$table->boolean('ampliacion');
 			$table->boolean('reconstruccion');
 			$table->boolean('conservacion');
-			$table->boolean('gestion');
 			$table->boolean('pasivo');
 			$table->boolean('adeudo');
 			$table->boolean('pago');
 			$table->boolean('viabilidad');
-			$table->boolean('gestion_tecnica');
 			$table->boolean('evaluacion');
 			$table->boolean('validacion');
 			$table->boolean('recursos');

@@ -5,3 +5,5 @@ Route::get('solicitudes',['as'=>'solicitudes', 'uses'=>'SolicitudController@soli
 Route::get('nueva',['as'=>'nueva-solicitud', 'uses'=>'SolicitudController@nueva']);
 
 Route::post('registrar',['as'=>'registrar-solicitud','uses'=>'SolicitudController@registrar']);
+
+Route::post('getCatalogoAjax',['as'=>'getCatalogoAjax','uses'=>'SolicitudController@getCatalogoAjax']);

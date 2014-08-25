@@ -25,16 +25,17 @@ class CreatePeticionesTable extends Migration {
 			$table->integer('localidad_id')->unsigned();
 			$table->integer('tiposolicitud_id')->unsigned();
 
-			$table->date('fecha_captura');
 			$table->date('fecha_direccion');
-			$table->date('fecha_logistica');
 			$table->text('instruccion');
 			$table->text('comentario');
-			$table->boolean('cpp');
-			$table->boolean('cpp2');
-			$table->boolean('cpp3');
+			$table->boolean('ccp');
+			$table->boolean('ccp2');
+			$table->boolean('ccp3');
+			$table->boolean('ccp4');
+			$table->boolean('ccp4');
 			$table->boolean('atn_ciudadana');
 			$table->string('num_oficio');
+			$table->text('descripcion_solicitud');
 
 			$table->foreign('respuesta_id')->references('id')->on('respuestas');
 			$table->foreign('status_id')->references('id')->on('status');
