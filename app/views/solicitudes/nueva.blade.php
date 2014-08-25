@@ -30,7 +30,7 @@
 		<div class="col-sm-8 col-lg-10">
 			<legend>Datos Generales</legend>
 			<div class="col-sm-3">
-				{{Field::select('region_id',null,['class'=>'form-control chosen','id'=>'region_id'],$regiones)}}
+				{{Field::select('region_id',null,['class'=>'form-control chosen','id'=>'region_id','required'],$regiones)}}
 			</div>
 			<div class="col-sm-3">
 				{{Field::select('distrito_id',null,['class'=>'form-control chosen','id'=>'distrito_id'],['0'=>'Seleccione ... '])}}

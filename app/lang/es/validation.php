@@ -97,7 +97,19 @@ return array(
         'full_name'  => 'nombre completo',
         'password'   => 'contraseña',
         'email'      => 'correo electronico',
-        'num_oficio' => 'num. oficio'
+        'num_oficio' => 'num. oficio',
+        'tiposolicitud_id' => 'tipo solicitud',
+        'residencia_id' => 'residencia',
+        'respuesta_id' => 'respuesta',
+        'region_id' => 'region',
+        'distrito_id' => 'distrito',
+        'municipio_id' => 'municipio',
+        'localidad_id' => 'localidad',
+        'ampliacion' => 'ampliacion y Modernizacion',
+        'proyectos' => 'estudios y Proyectos',
+        'reunion' => 'convocatoria a Reunion',
+        'recursos' => 'solicitud de Recursos',
+        'calidad' => 'control de Calidad'
 
     ),
 
