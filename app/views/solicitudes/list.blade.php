@@ -44,7 +44,7 @@
         <td>{{$item->num_oficio}}</td>
         <td>{{$item->atn_ciudadana_title}}</td>
         <td width="150" class="text-center">
-                <a href="" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="{{ route('editar-solicitud', [$item->id])}}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
                 <a href="" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></a>
         </td>
     </tr>

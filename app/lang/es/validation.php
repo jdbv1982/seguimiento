@@ -109,7 +109,12 @@ return array(
         'proyectos' => 'estudios y Proyectos',
         'reunion' => 'convocatoria a Reunion',
         'recursos' => 'solicitud de Recursos',
-        'calidad' => 'control de Calidad'
+        'calidad' => 'control de Calidad',
+        'departamento_id' => 'departamento',
+        'atencion_a'   => 'atencion',
+        'seguimiento_a'    => 'seguimiento',
+        'cumplimiento_a'   => 'cumplimiento',
+        'evaluacion_a' =>  'evaluacion'
 
     ),
 

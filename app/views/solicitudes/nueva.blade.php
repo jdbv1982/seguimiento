@@ -6,12 +6,15 @@
 
 @section('content')
 	<h3>Nueva Solicitud</h3>
+
 	{{Form::open(['route'=>'registrar-solicitud', 'method'=>'POST','role'=>'form'])}}
 	<div class="row">
+		{{ Form::hidden('nivel', '', ['id'=>'nivel']) }}
 		<div class="col-sm-4 col-lg-2">
 			<legend>Dirigido a:</legend>
 			{{Form::label('departamento_id','Departamento')}}
-			{{Form::select('departamento_id[]', $departamentos, null,['class'=>'form-control chosen','multiple','required'])}}
+			{{Form::select('departamento_id[]', $departamentos, null,['class'=>'form-control chosen','multiple'])}}
+			{{ $errors->first('departamento_id', '<p class="label label-danger">:message</p>' )}}
 
 			{{Field::text('num_oficio')}}
 
@@ -31,6 +34,7 @@
 			<legend>Datos Generales</legend>
 			<div class="col-sm-3">
 				{{Field::select('region_id',null,['class'=>'form-control chosen','id'=>'region_id','required'],$regiones)}}
+
 			</div>
 			<div class="col-sm-3">
 				{{Field::select('distrito_id',null,['class'=>'form-control chosen','id'=>'distrito_id'],['0'=>'Seleccione ... '])}}
@@ -47,6 +51,13 @@
 			<div class="col-sm-6">
 				{{Field::textarea('comentario',null,null,['class'=>'form-control', 'rows'=>'3'])}}
 			</div>
+			<div class="col-sm-12">
+				<div class="col-sm-2"><strong>Accion:</strong></div>
+				<div class="col-sm-2">{{Field::checkbox('atencion_a')}}</div>
+				<div class="col-sm-2">{{Field::checkbox('seguimiento_a')}}</div>
+				<div class="col-sm-2">{{Field::checkbox('cumplimiento_a')}}</div>
+				<div class="col-sm-2">{{Field::checkbox('evaluacion_a')}}</div>
+			</div>
 			<legend>Caracteristicas</legend>
 			<row class="col-sm-3">
 				<legend>Especifico:</legend>
@@ -60,7 +71,7 @@
 			<row class="col-sm-3">
 				<legend>Gestion Administrativa</legend>
 				{{Field::checkbox('pasivo')}}
-				{{Field::checkbox('adeudos')}}
+				{{Field::checkbox('adeudo')}}
 				{{Field::checkbox('pago')}}
 			</row>
 			<row class="col-sm-3">
