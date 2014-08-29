@@ -45,7 +45,7 @@
         <td>{{$item->atn_ciudadana_title}}</td>
         <td width="150" class="text-center">
                 <a href="{{ route('editar-solicitud', [$item->id])}}" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></a>
+                <a href="{{ route('imprimir-solicitud', [$item->id])}}" class="btn btn-default" target="_blank"><span class="glyphicon glyphicon-print"></span></a>
         </td>
     </tr>
 @endforeach

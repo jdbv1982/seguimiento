@@ -10,6 +10,7 @@ Route::group(['before'=>'auth'], function(){
 
 
 	require (__DIR__ . '/routes/ajax.php');
+	require (__DIR__ . '/routes/impresion.php');
 });
 
 

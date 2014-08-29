@@ -119,6 +119,6 @@
 @stop
 
 @section('js')
-<script src="{{asset("assets/js/solicitud.js")}}"></script>
-<script src="{{asset("assets/js/chosen.jquery.min.js")}}"></script>
+{{ HTML::script("assets/js/solicitud.js") }}
+{{ HTML::script("assets/js/chosen.jquery.min.js") }}
 @stop
