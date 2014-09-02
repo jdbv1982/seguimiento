@@ -53,7 +53,7 @@ class SolicitudController extends BaseController{
 	}
 
 	public function solicitudes(){
-		$solicitudes = $this->solicitudRepo->solicitudes();
+		$solicitudes = $this->solicitudRepo->solicitudes('status_id','=',1);
 		return View::make('solicitudes/list', compact('solicitudes'));
 	}
 

@@ -55,8 +55,6 @@ class Solicitud extends \Eloquent {
         return $this->hasOne('FollowUp\Entities\Localidad','id','localidad_id');
     }
 
-
-
     //accessors
 
     public function getAtnCiudadanaTitleAttribute(){

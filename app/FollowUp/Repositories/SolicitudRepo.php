@@ -1,6 +1,6 @@
 <?php namespace FollowUp\Repositories;
 
-use Auth;
+use Auth, DB;
 
 use FollowUp\Entities\Solicitud;
 
@@ -17,8 +17,8 @@ class SolicitudRepo extends BaseRepo{
 		return $solicitud;
 	}
 
-	public function solicitudes(){
-		return Solicitud::with('respuesta','state','user','residencia','dirigidos','dirigidos.departamentos','tipo')->orderBy('id','desc')->get();
+	public function solicitudes($campo, $regla, $valor){
+		return Solicitud::with('respuesta','state','user','residencia','dirigidos','dirigidos.departamentos','tipo')->where($campo,$regla,$valor)->orderBy('id','desc')->get();
 	}
 
 	public function solicitud($id){
@@ -35,6 +35,14 @@ class SolicitudRepo extends BaseRepo{
 
 		return  $deptos;
 	}
+
+    public function getTotalSolicitud($regla, $valor){
+        return DB::table('peticiones')->where('status_id', $regla, $valor)->count();
+    }
+
+    public function getSolicitudesStatus($regla, $valor){
+        return DB::table('peticiones')->where('status_id', $regla, $valor)->get();
+    }
 
 
 }

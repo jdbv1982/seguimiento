@@ -15,13 +15,14 @@ $(document).ready(function() {
 		rellenaSelect($("#region_id").val(),'distritos','region_id',$('#distrito_id'),nivel);
 	});
 
-            $(document).on('change','#distrito_id',function(){
-                rellenaSelect($("#distrito_id").val(),'municipios','distrito_id',$('#municipio_id'),nivel);
-            });
+    $(document).on('change','#distrito_id',function(){
+        rellenaSelect($("#distrito_id").val(),'municipios','distrito_id',$('#municipio_id'),nivel);
+    });
 
-            $(document).on('change','#municipio_id',function(){
-                rellenaSelect($("#municipio_id").val(),'localidades','municipio_id',$('#localidad_id'),nivel);
-            });
+    $(document).on('change','#municipio_id',function(){
+        rellenaSelect($("#municipio_id").val(),'localidades','municipio_id',$('#localidad_id'),nivel);
+    });
+
 
 } );
 
