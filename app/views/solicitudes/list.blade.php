@@ -32,11 +32,11 @@
         <td>{{$item->fecha_direccion}}</td>
         <td>
             @foreach ($item->dirigidos as $dirigido)
-                {{$dirigido->departamentos->nombre}}<br>
+                * {{$dirigido->departamentos->nombre}}<br>
             @endforeach
         </td>
         <td>{{$item->tipo->clave}}</td>
-        <td>{{$item->instruccion}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="{{$item->instruccion}}">{{Str::limit($item->instruccion,100)}}</td>
         <td>{{$item->respuesta->nombre}}</td>
         <td>{{$item->residencia->nombre}}</td>
         <td>{{$item->state->status}}</td>

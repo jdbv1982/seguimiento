@@ -1,6 +1,16 @@
 <?php
 
+use FollowUp\Entities\User;
+
+use FollowUp\Repositories\UserRepo;
+
 class AuthController extends BaseController{
+
+    protected $userRepo;
+
+    public function __construct(UserRepo $userRepo){
+        $this->userRepo = $userRepo;
+    }
 
 	public function login(){
 		$data = Input::all();
@@ -19,7 +29,14 @@ class AuthController extends BaseController{
 	}
 
 	public function changePassword(){
-		dd(Input::all());
+		$user = $this->userRepo->find(Auth::user()->id);
+        if(! empty($user)){
+            $user->password = Input::get('password');
+            if($user->save()){
+                return Redirect::route('home');
+            }
+        }
+
 	}
 
 	public function logout(){

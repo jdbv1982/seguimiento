@@ -37,13 +37,13 @@
 
         </div>
         <div class="col-sm-3">
-            {{Field::select('distrito_id',null,['class'=>'form-control chosen','id'=>'distrito_id'],['0'=>'Seleccione ... '])}}
+            {{Field::select('distrito_id',null,['class'=>'form-control chosen','id'=>'distrito_id'], $distritos)}}
         </div>
         <div class="col-sm-3">
-            {{Field::select('municipio_id',null,['class'=>'form-control chosen','id'=>'municipio_id'],['0'=>'Seleccione ... '])}}
+            {{Field::select('municipio_id',null,['class'=>'form-control chosen','id'=>'municipio_id'],$municipios)}}
         </div>
         <div class="col-sm-3">
-            {{Field::select('localidad_id',null,['class'=>'form-control chosen','id'=>'localidad_id'],['0'=>'Seleccione ... '])}}
+            {{Field::select('localidad_id',null,['class'=>'form-control chosen','id'=>'localidad_id'],$localidades)}}
         </div>
         <div class="col-sm-6">
             {{Field::textarea('instruccion',null,null,['class'=>'form-control', 'rows'=>'3'])}}

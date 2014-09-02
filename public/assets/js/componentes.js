@@ -1,3 +1,6 @@
 $(document).ready(function() {
-    $('#example').dataTable();
+    $('#example').dataTable({
+        "order": [[ 1, "desc" ]],
+        "pagingType": "full_numbers"
+    });
 } );

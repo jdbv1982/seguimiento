@@ -63,8 +63,10 @@ class SolicitudController extends BaseController{
 		$residencias = $this->residenciaRepo->lists('residencias');
 		$respuestas = $this->respuestaRepo->lists('respuestas');
 		$regiones = $this->regionRepo->lists('regiones');
-		$regiones = array(0 => "Seleccione ... ") + $regiones;
-		return View::make('solicitudes/nueva',compact('departamentos','tipos','residencias','respuestas','regiones'));
+        $distritos = $this->distritoRepo->lists('distritos');
+        $municipios = $this->municipioRepo->lists('municipios');
+        $localidades = $this->localidadRepo->lists('localidades');
+		return View::make('solicitudes/nueva',compact('departamentos','tipos','residencias','respuestas','regiones','distritos','municipios','localidades'));
 	}
 
 	public function registrar(){
