@@ -31,9 +31,10 @@ public function getSolicitudesStatus(){
     $regla = $_POST['regla'];
     $valor = $_POST['status'];
 
-    $total = $this->solicitudRepo->getSolicitudesStatus($regla, $valor);
+    $solicitudes = $this->solicitudRepo->solicitudes('status_id',$regla,$valor);
 
-    return Response::json($total);
+    return View::make('solicitudes/list-partial', compact('solicitudes'));
+    //return Response::json($total);
 }
 
 

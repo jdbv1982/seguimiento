@@ -55,6 +55,10 @@ class Solicitud extends \Eloquent {
         return $this->hasOne('FollowUp\Entities\Localidad','id','localidad_id');
     }
 
+    public function seguimientos(){
+        return $this->hasMany('FollowUp\Entities\Seguimiento','peticion_id','id');
+    }
+
     //accessors
 
     public function getAtnCiudadanaTitleAttribute(){

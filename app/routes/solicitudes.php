@@ -8,3 +8,5 @@ Route::post('registrar',['as'=>'registrar-solicitud','uses'=>'SolicitudControlle
 Route::get('editar/{id}',['as'=>'editar-solicitud', 'uses'=>'SolicitudController@editar']);
 Route::post('editar/{id}',['as'=>'update-solicitud', 'uses'=>'SolicitudController@update']);
 
+
+

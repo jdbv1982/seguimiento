@@ -40,9 +40,5 @@ class SolicitudRepo extends BaseRepo{
         return DB::table('peticiones')->where('status_id', $regla, $valor)->count();
     }
 
-    public function getSolicitudesStatus($regla, $valor){
-        return DB::table('peticiones')->where('status_id', $regla, $valor)->get();
-    }
-
 
 }
