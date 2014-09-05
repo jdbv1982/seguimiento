@@ -25,13 +25,13 @@ function btn_select(btn, btn_span, regla, valor){
 
     $.post('getTotalSolicitudes',{regla: regla, status: valor}, function(data){
         btn_span.html(data);
-        if(data > 0){
             $.post('getSolicitudesStatus',{regla: regla, status: valor}, function(data){
-               $('#example tbody').html(data);
+               $('#listado').html("");
+               $('#listado').html(data);
+               $('#example').dataTable({
+                   "iDisplayLength": 5
+               });
             });
-        }else{
-            $('#example tbody').html("<tr class='odd'><td valign='top' colspan='12' class='dataTables_empty'>No hay registros coincidentes encontrados</td></tr>");
-        }
     });
 
 

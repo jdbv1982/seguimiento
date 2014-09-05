@@ -3,6 +3,7 @@
 
 class Seguimiento extends \Eloquent {
 
+    protected $fillable = array('peticion_id','user_id','comentario');
     protected $table = 'seguimientos';
 
     public function user(){

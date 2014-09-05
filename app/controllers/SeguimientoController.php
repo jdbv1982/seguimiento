@@ -16,4 +16,5 @@ class SeguimientoController extends BaseController {
         return View::make('seguimiento/detalles', compact('solicitud'));
     }
 
+
 } 

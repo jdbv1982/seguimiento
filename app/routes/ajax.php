@@ -5,3 +5,8 @@ Route::post('getTotalSolicitudes',['as'=>'getTotalSolicitudes','uses'=>'AjaxCont
 
 
 Route::post('getSolicitudesStatus',['as'=>'getSolicitudesStatus','uses'=>'AjaxController@getSolicitudesStatus']);
+
+Route::post('setComentario', ['as'=>'setComentario', 'uses'=>'AjaxController@setComentario']);
+Route::post('delComentario', ['as'=>'delComentario', 'uses'=>'AjaxController@delComentario']);
+Route::post('getComentarios', ['as'=>'getComentarios', 'uses'=>'AjaxController@getComentarios']);
+

@@ -32,6 +32,10 @@ abstract class BaseRepo {
 		return DB::table($table)->lists($campos[0],$campos[1]);
 	}
 
+    public function delete($id){
+        return $this->model->destroy($id);
+    }
+
 
 
 }

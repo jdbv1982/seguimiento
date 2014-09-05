@@ -1,9 +1,11 @@
 @extends('layouts/layout')
 
 @section('content')
+
 <br/>
 <legend align="left">Seguimiento</legend>
 <div class="col-xs-12 col-sm-3">
+    {{ Form::hidden('peticion_id',$solicitud->id, ['id'=>'peticion-id']) }}
     <table class="table table-responsive table-bordered table-condensed">
         <tr>
             <td>Folio: </td>
@@ -90,33 +92,10 @@
     <br/><br/>
 </div>
 
-<div class="col-xs-12 col-sm-9">
-    <legend>Comentarios</legend>
-    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-toggle="tooltip" data-placement="top" title="Agregar Comentario"><span class="glyphicon glyphicon-plus"></span> </button>
-    <table class="table table-bordered table-responsive">
-        <thead>
-        <th>#</th>
-        <th>Fecha</th>
-        <th>Comentario</th>
-        <th>Realizado</th>
-        <th>Acciones</th>
-        </thead>
-        <tbody>
-        @foreach($solicitud->seguimientos as $item)
-        <tr>
-            <td>{{$item->id}}</td>
-            <td>{{$item->created_at}}</td>
-            <td>{{$item->comentario}}</td>
-            <td>{{$item->user->full_name}}</td>
-            <td width="10%">
-                <a href="#" class="btn btn-default" data-toggle="modal" data-target="#editModal" data-toggle="tooltip" data-placement="top" title="Editar Comentario"><span class="glyphicon glyphicon-pencil"></span></a>
-                <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Eliminar Comentario"><span class="glyphicon glyphicon-minus"></span></a>
-            </td>
-        </tr>
-        @endforeach
-        </tbody>
-    </table>
+<div class="col-xs-12 col-sm-9" id="list-comentarios">
+    @include('seguimiento/comentarios')
 </div>
+
 
 
 
@@ -126,4 +105,9 @@
 @include('seguimiento/edit_comment')
 
 
+@stop
+
+
+@section('js')
+    {{ HTML::script("assets/js/seguimiento.js") }}
 @stop

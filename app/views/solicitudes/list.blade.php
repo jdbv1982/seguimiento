@@ -11,27 +11,12 @@
         <a href="#" id="btn_finalizados" class="btn btn-default btn-list">Finalizados <span class="badge"></span></a>
 	</div>
 
-	<table id="example" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Fecha D.G</th>
-            <th>Dirigido</th>
-            <th>Solicitud</th>
-            <th>Instruccion</th>
-            <th>Plazo</th>
-            <th>Residencia</th>
-            <th>Status</th>
-            <th>Realizo</th>
-            <th>Num. Oficio</th>
-            <th>Atn Ciudadana</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody>
+    <div id="listado">
         @include('solicitudes/list-partial')
-    </tbody>
-  </table>
+    </div>
+
+
+
 
 
 </div>
