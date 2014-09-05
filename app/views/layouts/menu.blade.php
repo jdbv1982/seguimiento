@@ -11,8 +11,8 @@
         </div>
 @if(Auth::check())
         <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
     @if(Auth::user()->verificaPermiso(Auth::user()->id, 1) == 'true')
-             <ul class="nav navbar-nav">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sistema <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -21,8 +21,9 @@
                     @endif
                 </ul>
             </li>
-            <li><a href="{{ route('solicitudes')}}">Solicitudes</a></li>
     @endif
+            <li><a href="{{ route('solicitudes')}}">Solicitudes</a></li>
+
         </ul>
             <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
