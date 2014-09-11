@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-xs-12">
-	<h2>Listado de Sulicitudes</h2>
+	<h2>Listado de Solicitudes</h2>
 	<div>
         <a href="{{ route('nueva-solicitud') }}" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></a>
         <a href="#" id="btn_todos" class="btn btn-default btn-list">Todos <span class="badge"></span></a>
