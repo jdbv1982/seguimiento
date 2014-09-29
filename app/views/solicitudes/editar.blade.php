@@ -92,16 +92,18 @@
 			<div class="row">
 				<legend>C.C.P.</legend>
 				<div class="checkbox">
+                    <label>
 						{{Form::checkbox('ccp',null, $solicitud->ccp) }} Jefe de la Unidad Técnica
+                    </label>
 				</div>
 				<div class="checkbox">
-						{{Form::checkbox('ccp2',null, $solicitud->ccp2) }} Ing. Rafael Galindo Ramirez - Jefe de Unidad de Coordinacion Operativa Zona Norte
+                    <label>{{Form::checkbox('ccp2',null, $solicitud->ccp2) }} Ing. Rafael Galindo Ramirez - Jefe de Unidad de Coordinacion Operativa Zona Norte</label>
 				</div>
 				<div class="checkbox">
-						{{Form::checkbox('ccp3',null, $solicitud->ccp3) }} Ing. Olegario Soto Cruz - Jefe de Unidad de Coordinacion Operativa Zona Sur
+                    <label>{{Form::checkbox('ccp3',null, $solicitud->ccp3) }} Ing. Olegario Soto Cruz - Jefe de Unidad de Coordinacion Operativa Zona Sur</label>
 				</div>
 				<div class="checkbox">
-						{{Form::checkbox('ccp4',null, $solicitud->ccp4) }} Jefe de la Unidad de seguimiento
+                    <label>{{Form::checkbox('ccp4',null, $solicitud->ccp4) }} Jefe de la Unidad de seguimiento</label>
 				</div>
 			</div>
 

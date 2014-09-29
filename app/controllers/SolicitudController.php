@@ -117,7 +117,7 @@ class SolicitudController extends BaseController{
 
 			$caracteristica = $this->caracteristicaRepo->newCaracteristica();
 			$manager = new CarateristicaManager($caracteristica, $data);
-			$caracteristicas = $this->caracteristicaRepo->find($solicitud->caracteristica->id);
+			$caracteristicas = $this->caracteristicaRepo->find($solicitud->caracteristica->peticion_id);
 			$manager->updateCaracteristicas($caracteristicas, $data);
 
 			$accion = $this->accionRepo->newAccion();

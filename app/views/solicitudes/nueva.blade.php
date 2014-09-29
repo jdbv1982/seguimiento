@@ -45,11 +45,8 @@
         <div class="col-sm-3">
             {{Field::select('localidad_id',null,['class'=>'form-control chosen','id'=>'localidad_id'],$localidades)}}
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-12">
             {{Field::textarea('instruccion',null,null,['class'=>'form-control', 'rows'=>'3'])}}
-        </div>
-        <div class="col-sm-6">
-            {{Field::textarea('comentario',null,null,['class'=>'form-control', 'rows'=>'3'])}}
         </div>
         <div class="col-sm-12">
             <div class="col-sm-2"><strong>Accion:</strong></div>
@@ -93,26 +90,22 @@
             <legend>C.C.P.</legend>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="cpp">
-                    Jefe de la unidad Tecnica
+                    {{Form::checkbox('ccp')}}Jefe de la unidad Tecnica
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="cpp2">
-                    Ing. Rafael Galindo Ramirez - Jefe de Unidad de Coordinacion Operativa Zona Norte
+                    {{Form::checkbox('ccp2')}}Ing. Rafael Galindo Ramirez - Jefe de Unidad de Coordinacion Operativa Zona Norte
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="cpp3">
-                    Ing. Olegario Soto Cruz - Jefe de Unidad de Coordinacion Operativa Zona Sur
+                    {{Form::checkbox('ccp3')}}Ing. Olegario Soto Cruz - Jefe de Unidad de Coordinacion Operativa Zona Sur
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="cpp4">
-                    Jefe de la Unidad de seguimiento
+                    {{Form::checkbox('ccp4')}}Jefe de la Unidad de seguimiento
                 </label>
             </div>
         </div>

@@ -85,6 +85,10 @@
             <td>{{$solicitud->instruccion}}</td>
         </tr>
         <tr>
+            <td>Comentario</td>
+            <td>{{$solicitud->comentario}}</td>
+        </tr>
+        <tr>
             <td>Observaciones</td>
             <td>{{$solicitud->caracteristica->observaciones}}</td>
         </tr>

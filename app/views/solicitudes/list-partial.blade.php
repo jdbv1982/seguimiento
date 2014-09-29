@@ -6,10 +6,9 @@
         <th>Dirigido</th>
         <th>Solicitud</th>
         <th>Instruccion</th>
-        <th>Plazo</th>
+        <th>Comentario</th>
         <th>Residencia</th>
         <th>Status</th>
-        <th>Realizo</th>
         <th>Num. Oficio</th>
         <th>Atn Ciudadana</th>
         <th>Acciones</th>
@@ -28,10 +27,9 @@
         </td>
         <td>{{$item->tipo->clave}}</td>
         <td data-toggle="tooltip" data-placement="top" title="{{$item->instruccion}}">{{Str::limit($item->instruccion,100)}}</td>
-        <td>{{$item->respuesta->nombre}}</td>
+        <td data-toggle="tooltip" data-placement="top" title="{{$item->comentario}}">{{Str::limit($item->comentario,100)}}</td>
         <td>{{$item->residencia->nombre}}</td>
         <td>{{$item->state->status}}</td>
-        <td>{{$item->user->full_name}}</td>
         <td>{{$item->num_oficio}}</td>
         <td>{{$item->atn_ciudadana_title}}</td>
         <td width="150" class="text-center">

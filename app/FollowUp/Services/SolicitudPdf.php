@@ -228,10 +228,7 @@ $html .= '<table border="1px">
                     </tr>
                     <tr>
                         <td class="letra-sm" colspan="2">De conformidad con el articulo 56, Fracción XIV de la Ley de Responsabilidades de los Servidores
-                            Públicos al servicio del Estado y Municipios de Oaxaca; sirvase enviar a esta Coordinación de Atención Ciudadana y Vinculación
-                            Social, el reporte de la atención y conclusión del presente asunto, mismo que deberá contener la fecha y el número de folio con
-                            que se remite, a fin de clasificarlo como terminado y, de esta forma, cumplir con el compromiso que el jefe del Ejecutivo del Estado
-                            estableció con la sociedad oaxaqueña.
+                            Públicos al servicio del Estado y Municipios de Oaxaca; sirvase atender y enviarlo a esta direccion a fin de clasificarlo como terminado.
                         </td>
                         <td class="text-center" colspan="2">
                             <p>ARQ. GUILLERMO MARTINEZ GOMEZ</p>

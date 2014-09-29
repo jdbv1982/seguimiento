@@ -10,6 +10,7 @@ class Caracteristica extends \Eloquent {
         $campos = $this->attributes;
 
         unset($campos['observaciones']);
+        unset($campos['peticion_id']);
 
             $inAttributes = array_key_exists($key, $campos);
 

@@ -13,7 +13,6 @@ class SolicitudManager extends BaseManager {
 			'localidad_id'     => 'required|exists:localidades,id',
 			'tiposolicitud_id' => 'required',
 			'fecha_direccion'  => 'required',
-			'num_oficio'       => 'required',
 			'instruccion'      => 'required'
 		];
 
@@ -26,7 +25,6 @@ class SolicitudManager extends BaseManager {
 		$data = $this->checkCampo($data, 'ccp3');
 		$data = $this->checkCampo($data, 'ccp4');
 		$data = $this->checkCampo($data, 'atn_ciudadana');
-
 
 		return $data;
 	}
