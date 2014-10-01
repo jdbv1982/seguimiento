@@ -29,7 +29,8 @@ function btn_select(btn, btn_span, regla, valor){
                $('#listado').html("");
                $('#listado').html(data);
                $('#example').dataTable({
-                   "iDisplayLength": 5
+                   "iDisplayLength": 5,
+                   "order": [ 0, 'desc' ]
                });
             });
     });
