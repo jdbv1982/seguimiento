@@ -39,12 +39,12 @@ class SolicitudPdf extends BasePdf {
 
 
     .texto-md{
-         height: 70px;
+         height: 50px;
          padding: 15px;
     }
 
     .texto-lg{
-         height: 250px;
+         height: 150px;
     }
 
     .letra-sm{
@@ -57,6 +57,9 @@ class SolicitudPdf extends BasePdf {
         text-align: center;
     }
 
+    .upper{
+        text-transform: uppercase;
+    }
 
 </style>
 
@@ -67,23 +70,26 @@ EOF;
 $html .= '<table border="1px">
                     <tr>
                         <td>DIRIGIDO A:</td>
-                        <td colspan="3">';
+                        <td colspan="2">';
 
 
         foreach ($solicitud->dirigidos as $dirigido){
             $html .= $dirigido->departamentos->nombre. ', ';
         }
         $html .= '</td>
+                    <td rowspan="2" class="text-center">FOLIO: '.$solicitud->id.'</td>
                     </tr>
                     <tr>
                         <td>FECHA DE:</td>
-                        <td>'.$solicitud->fecha_direccion.'</td>
-                        <td>FOLIO:</td>
-                        <td>'.$solicitud->id.'</td>
+                        <td colspan="2">'.$solicitud->fecha_direccion.'</td>
                     </tr>
                     <tr>
                         <td>DESCRIPCIÓN:</td>
                         <td class="texto-md" colspan="3">'.$solicitud->descripcion_solicitud.'</td>
+                    </tr>
+                     <tr>
+                        <td>UBICACIÓN</td>
+                        <td colspan="3">'.$solicitud->region->nombre.', Distrito: '. $solicitud->distrito->nombre .', Municipio: '.$solicitud->municipio->nombre.', Localidad: ' . $solicitud->localidad->nombre .'</td>
                     </tr>
                     <tr>
                         <td rowspan="5">TEMA:</td>
@@ -93,50 +99,23 @@ $html .= '<table border="1px">
                     <tr>
                         <td>ESPECIFICO</td>
                         <td colspan="2">';
-
-                        if($solicitud->caracteristica->construccion == 1){
-                            $especifico .= '-Construcción ';
-                        }
-
-                        if($solicitud->caracteristica->ampliacion == 1){
-                            $especifico .= '-Ampliación y Modernización ';
-                        }
-
-                        if($solicitud->caracteristica->reconstruccion == 1){
-                            $especifico .= '-Reconstrucción ';
-                        }
-
-                        if($solicitud->caracteristica->conservacion == 1){
-                            $especifico .= '-Conservación ';
-                        }
-
-                        if($solicitud->caracteristica->reunion == 1){
-                            $especifico .= '-Convocatoria a Reunion ';
-                        }
-
-                        if($solicitud->caracteristica->proyectos == 1){
-                            $especifico .= '-Estudios y Proyectos ';
-                        }
-
-                        if($solicitud->caracteristica->observaciones != ''){
+                            $especifico .= $solicitud->caracteristica->construccion;
+                            $especifico .= $solicitud->caracteristica->ampliacion;
+                            $especifico .= $solicitud->caracteristica->reconstruccion;
+                            $especifico .= $solicitud->caracteristica->conservacion;
+                            $especifico .= $solicitud->caracteristica->reunion;
+                            $especifico .= $solicitud->caracteristica->proyectos;
                             $especifico .= '--OBSERVACIONES: ' . $solicitud->caracteristica->observaciones;
-                        }
-        $html .= $especifico;
+                            $html .= $especifico;
         $html .= '</td>
                     </tr>
                     <tr>
                         <td>GESTION ADMINISTRATIVA</td>
                         <td colspan="2">';
-                        if($solicitud->caracteristica->pasivo == 1){
-                            $gestion_a .= '-Pasivos ';
-                        }
-                        if($solicitud->caracteristica->adeudo == 1){
-                            $gestion_a .= '-Adeudos ';
-                        }
-                        if($solicitud->caracteristica->pago == 1){
-                            $gestion_a .= '-Pagos Atrazados ';
-                        }
-        $html .= $gestion_a;
+                            $gestion_a .= $solicitud->caracteristica->pasivo;
+                            $gestion_a .= $solicitud->caracteristica->adeudo;
+                            $gestion_a .= $solicitud->caracteristica->pago;
+                            $html .= $gestion_a;
 
         $html .= '</td>
                     </tr>
@@ -144,20 +123,11 @@ $html .= '<table border="1px">
                         <td>GESTION TECNICA</td>
                         <td colspan="2">';
 
-                            if($solicitud->caracteristica->evaluacion == 1){
-                                $gestion_t .= '-Evaluación ';
-                            }
-                            if($solicitud->caracteristica->validacion == 1){
-                                $gestion_t .= '-Validación ';
-                            }
-                            if($solicitud->caracteristica->recursos == 1){
-                                $gestion_t .= '-Solicitud de Recursos ';
-                            }
-                            if($solicitud->caracteristica->calidad == 1){
-                                $gestion_t .= '-Control de Calidad ';
-                            }
-
-        $html .= $gestion_t;
+                            $gestion_t .= $solicitud->caracteristica->evaluacion;
+                            $gestion_t .= $solicitud->caracteristica->validacion;
+                            $gestion_t .= $solicitud->caracteristica->recursos;
+                            $gestion_t .= $solicitud->caracteristica->calidad;
+                            $html .= $gestion_t;
         $html .=        '</td>
                     </tr>
                     <tr>
@@ -193,10 +163,6 @@ $html .= '<table border="1px">
         $html .='</td>
                     </tr>
                     <tr>
-                        <td>UBICACIÓN</td>
-                        <td colspan="3">'.$solicitud->region->nombre.', Distrito: '. $solicitud->distrito->nombre .', Municipio: '.$solicitud->municipio->nombre.', Localidad: ' . $solicitud->localidad->nombre .'</td>
-                    </tr>
-                    <tr>
                         <td>INSTRUCCIÓN</td>
                         <td colspan="3" class="texto-lg">'.$solicitud->instruccion.'</td>
                     </tr>
@@ -227,8 +193,8 @@ $html .= '<table border="1px">
         $html .= '</td>
                     </tr>
                     <tr>
-                        <td class="letra-sm" colspan="2">De conformidad con el articulo 56, Fracción XIV de la Ley de Responsabilidades de los Servidores
-                            Públicos al servicio del Estado y Municipios de Oaxaca; sirvase atender y enviarlo a esta direccion a fin de clasificarlo como terminado.
+                        <td class="letra-sm text-uppercase" colspan="2">DE CONFORMIDAD CON EL ARTICULO 56, FRACCIÓN XIV DE LA LEY DE RESPONSABILIDADES DE LOS SERVIDORES
+                            PÚBLICOS AL SERVICIO DEL ESTADO Y MUNICIPIOS DE OAXACA; SIRVASE ATENDER Y ENVIARLO A ESTA DIRECCION A FIN DE CLASIFICARLO COMO TERMINADO.
                         </td>
                         <td class="text-center" colspan="2">
                             <p>ARQ. GUILLERMO MARTINEZ GOMEZ</p>

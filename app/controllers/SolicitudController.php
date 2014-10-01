@@ -73,7 +73,6 @@ class SolicitudController extends BaseController{
 		$data = Input::all();
 		$solicitud = $this->solicitudRepo->newSolicitud();
 		$manager = new SolicitudManager($solicitud, $data);
-
 		if($manager->save()){
 			$deptos = Input::get('departamento_id');
 			$this->saveDirigidos($deptos, $solicitud->id);
@@ -117,7 +116,7 @@ class SolicitudController extends BaseController{
 
 			$caracteristica = $this->caracteristicaRepo->newCaracteristica();
 			$manager = new CarateristicaManager($caracteristica, $data);
-			$caracteristicas = $this->caracteristicaRepo->find($solicitud->caracteristica->peticion_id);
+			$caracteristicas = $this->caracteristicaRepo->find($solicitud->caracteristica->id);
 			$manager->updateCaracteristicas($caracteristicas, $data);
 
 			$accion = $this->accionRepo->newAccion();

@@ -4,7 +4,7 @@ class CarateristicaManager extends BaseManager {
 
 	public function getRules(){
 		$rules = [
-			'peticion_id' => 'required|exists:departamentos,id',
+			'peticion_id' => 'required',
 			'construccion' => 'in:1,0',
 			'ampliacion' => 'in:1,0',
 			'reconstruccion' => 'in:1,0',

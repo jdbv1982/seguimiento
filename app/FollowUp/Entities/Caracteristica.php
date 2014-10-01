@@ -11,6 +11,8 @@ class Caracteristica extends \Eloquent {
 
         unset($campos['observaciones']);
         unset($campos['peticion_id']);
+        unset($campos['id']);
+
 
             $inAttributes = array_key_exists($key, $campos);
 
