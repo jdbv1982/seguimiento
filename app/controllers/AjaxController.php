@@ -81,5 +81,13 @@ class AjaxController extends BaseController{
         }
     }
 
+    public function updateStatus(){
+        $solicitud = $this->solicitudRepo->find($_POST['id']);
+        if(! empty($solicitud)){
+            $solicitud->status_id = $_POST['status'];
+            $solicitud->save();
+        }
+    }
+
 
 }

@@ -20,7 +20,21 @@ $(document).ready(function(){
         delComentario($(this).closest('tr'));
     });
 
+    $(document).on("click", "#update-status", function(e){
+        e.preventDefault();
+        updateStatus($("#peticion-id").val(), $("#status_id").val(), $('#label-status'));
+    })
+
 });
+
+function updateStatus(id, status, elemento){
+    //$.post('../updateStatus', {id: id, status: status});
+    elemento.removeClass("hidden");
+    elemento.show(300,function() {
+        elemento.hide(3000);
+    });
+}
+
 
 function addComment(ventana, eleid, id, elecomment, comment){
     ventana.modal('toggle');

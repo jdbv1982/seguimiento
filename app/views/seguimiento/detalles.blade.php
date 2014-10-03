@@ -9,7 +9,7 @@
     <table class="table table-responsive table-bordered table-condensed">
         <tr>
             <td>Folio: </td>
-            <td>{{ $solicitud->id }}</td>
+            <td id="folio-id">{{ $solicitud->id }}</td>
         </tr>
         <tr>
             <td>Fecha: </td>
@@ -69,9 +69,21 @@
             <td>Respuesta: </td>
             <td>{{$solicitud->respuesta->nombre}}</td>
         </tr>
-
-
     </table>
+    <br/>
+    <legend>Status</legend>
+    <div class="col-lg-6">
+        <div class="input-group">
+            {{ Form::select('status_id', $status,null, ['class' => 'form-control', 'id'=>'status_id']); }}
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="update-status">
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+      </span>
+        </div>
+        <p id="label-status" class="label label-success hidden">Status Actualizado</p>
+    </div>
+
 </div>
 
 <div class="col-xs-12 col-sm-9">
