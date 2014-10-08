@@ -28,7 +28,7 @@ $(document).ready(function(){
 });
 
 function updateStatus(id, status, elemento){
-    //$.post('../updateStatus', {id: id, status: status});
+    $.post('../updateStatus', {id: id, status: status});
     elemento.removeClass("hidden");
     elemento.show(300,function() {
         elemento.hide(3000);
