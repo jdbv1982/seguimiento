@@ -74,7 +74,7 @@
     <legend>Status</legend>
     <div class="col-lg-6">
         <div class="input-group">
-            {{ Form::select('status_id', $status,null, ['class' => 'form-control', 'id'=>'status_id']); }}
+            {{ Form::select('status_id', $status,$solicitud->status_id, ['class' => 'form-control', 'id'=>'status_id']); }}
       <span class="input-group-btn">
         <button class="btn btn-default" type="button" id="update-status">
             <span class="glyphicon glyphicon-ok"></span>
