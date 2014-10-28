@@ -5,9 +5,14 @@
         <th>Fecha D.G</th>
         <th>Dirigido</th>
         <th>Solicitud</th>
+        <th>Descripción</th>
         <th>Instruccion</th>
         <th>Comentario</th>
         <th>Residencia</th>
+        <th>Region</th>
+        <th>Distrito</th>
+        <th>Municipio</th>
+        <th>Localidad</th>
         <th>Status</th>
         <th>Num. Oficio</th>
         <th>Atn Ciudadana</th>
@@ -26,9 +31,14 @@
             @endforeach
         </td>
         <td>{{$item->tipo->clave}}</td>
-        <td data-toggle="tooltip" data-placement="top" title="{{$item->instruccion}}">{{Str::limit($item->instruccion,100)}}</td>
-        <td data-toggle="tooltip" data-placement="top" title="{{$item->comentario}}">{{Str::limit($item->comentario,100)}}</td>
+        <td>{{$item->descripcion_solicitud}}</td>
+        <td>{{$item->instruccion}}</td>
+        <td>{{$item->comentario}}</td>
         <td>{{$item->residencia->nombre}}</td>
+        <td>{{ $item->region->nombre  }}</td>
+        <td> {{ $item->distrito->nombre  }}</td>
+        <td>{{ $item->municipio->nombre  }}</td>
+        <td>{{ $item->localidad->nombre  }}</td>
         <td>{{$item->state->status}}</td>
         <td>{{$item->num_oficio}}</td>
         <td>{{$item->atn_ciudadana_title}}</td>

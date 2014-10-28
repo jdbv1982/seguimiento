@@ -18,7 +18,7 @@ class SolicitudRepo extends BaseRepo{
 	}
 
 	public function solicitudes($campo, $regla, $valor){
-		return Solicitud::with('respuesta','state','user','residencia','dirigidos','dirigidos.departamentos','tipo')->where($campo,$regla,$valor)->orderBy('id','desc')->get();
+		return Solicitud::with('respuesta','state','user','residencia','region','distrito','municipio','localidad','dirigidos','dirigidos.departamentos','tipo')->where($campo,$regla,$valor)->orderBy('id','desc')->get();
 	}
 
 	public function solicitud($id){

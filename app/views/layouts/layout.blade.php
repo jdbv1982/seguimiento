@@ -20,6 +20,18 @@
         @yield('content')
     </div>
 
+
+            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="loader">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div>
+                      <img src="../../public/assets/images/loader.gif" alt=""/>
+                      Procesando Informacion....
+                  </div>
+                </div>
+              </div>
+            </div>
+
     @include('layouts/js')
 
     @yield('js')

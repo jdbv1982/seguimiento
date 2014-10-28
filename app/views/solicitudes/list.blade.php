@@ -14,11 +14,6 @@
     <div id="listado">
         @include('solicitudes/list-partial')
     </div>
-
-
-
-
-
 </div>
 @stop
 
@@ -28,3 +23,5 @@
 {{ HTML::script("assets/js/componentes.js") }}
 {{ HTML::script("assets/js/listados.js") }}
 @stop
+
+
