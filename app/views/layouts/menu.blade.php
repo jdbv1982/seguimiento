@@ -24,6 +24,7 @@
     @endif
             <li><a href="{{ route('nueva-solicitud')}}">Nueva Solicitud</a></li>
             <li><a href="{{ route('solicitudes')}}">Solicitudes</a></li>
+            <li><a href="{{ route('reportes')}}">Reportes</a></li>
 
         </ul>
             <ul class="nav navbar-nav navbar-right">
