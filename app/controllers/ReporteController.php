@@ -6,6 +6,9 @@ use FollowUp\Repositories\MunicipioRepo;
 use FollowUp\Repositories\DepartamentoRepo;
 use FollowUp\Repositories\ResidenciaRepo;
 
+use FollowUp\Services\Rp;
+use FollowUp\Services\SolicitudExcel;
+
 class ReporteController extends BaseController {
 
     protected $reportesRepo;
@@ -13,13 +16,15 @@ class ReporteController extends BaseController {
     protected $deptoRepo;
     protected $residenciaRepo;
     protected $municipioRepo;
+    protected $solicitudExcel;
 
-    public function __construct(ReportesRepo $reportesRepo, RegionRepo $regionRepo, DepartamentoRepo $deptoRepo, ResidenciaRepo $residenciaRepo, MunicipioRepo $municipioRepo ){
+    public function __construct(ReportesRepo $reportesRepo, RegionRepo $regionRepo, DepartamentoRepo $deptoRepo, ResidenciaRepo $residenciaRepo, MunicipioRepo $municipioRepo, SolicitudExcel $solicitudExcel ){
         $this->reportesRepo = $reportesRepo;
         $this->regionRepo = $regionRepo;
         $this->deptoRepo = $deptoRepo;
         $this->residenciaRepo = $residenciaRepo;
         $this->municipioRepo = $municipioRepo;
+        $this->solicitudExcel = $solicitudExcel;
     }
 
     public function reportes(){
@@ -46,7 +51,15 @@ class ReporteController extends BaseController {
 
 
         $solicitudes = $this->reportesRepo->solicitudesReport($year, $direccion, $status, $residencia, $region, $municipio);
-        return $solicitudes;
+
+
+        return $this->solicitudExcel->printInformacionBase();
+
+        //$rp = new Rp;
+
+        //return $rp->printInformacion();
+
+        //return $solicitudes;
     }
 
     private function prepareStatus(){

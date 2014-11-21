@@ -5,12 +5,12 @@
 	"license": "MIT",
 	"require-dev": {
     		"way/generators": "2.*",
-    		"barryvdh/laravel-debugbar": "1.*",
-    		"phpoffice/phpexcel": "dev-develop",
+    		"barryvdh/laravel-debugbar": "1.*"
 	},
 	"require": {
 		"laravel/framework": "4.2.*",
-		"laurentbrieu/tcpdf": "dev-master"
+		"laurentbrieu/tcpdf": "dev-master",
+		"phpoffice/phpexcel": "dev-master"
 	},
 	"autoload": {
 		"psr-4":{
