@@ -42,6 +42,8 @@ class ReporteController extends BaseController {
 
     public function imprimirReporte(){
 
+        $nombre = Input::get('nombre_reporte');
+
         $year  = Input::has('chkyear') ? Input::get('year') : null;
         $direccion = Input::has('chkdireccion') ? Input::get('direccion') : null;
         $status = $this->prepareStatus();
@@ -52,14 +54,8 @@ class ReporteController extends BaseController {
 
         $solicitudes = $this->reportesRepo->solicitudesReport($year, $direccion, $status, $residencia, $region, $municipio);
 
+        return $this->solicitudExcel->printInformacion($solicitudes, $nombre);
 
-        return $this->solicitudExcel->printInformacionBase();
-
-        //$rp = new Rp;
-
-        //return $rp->printInformacion();
-
-        //return $solicitudes;
     }
 
     private function prepareStatus(){
