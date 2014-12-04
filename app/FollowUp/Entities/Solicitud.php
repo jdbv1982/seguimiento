@@ -1,7 +1,7 @@
 <?php namespace FollowUp\Entities;
 
 class Solicitud extends \Eloquent {
-    protected $fillable = array('respuesta_id','status_id','user_id','residencia_id','region_id','distrito_id','municipio_id','localidad_id','tiposolicitud_id','fecha_direccion','instruccion','comentario','ccp','ccp2','ccp3','ccp4','atn_ciudadana','num_oficio','descripcion_solicitud');
+    protected $fillable = array('respuesta_id','status_id','user_id','residencia_id','region_id','distrito_id','municipio_id','localidad_id','tiposolicitud_id','fecha_direccion','instruccion','comentario','ccp','ccp2','ccp3','ccp4','atn_ciudadana','num_oficio','descripcion_solicitud','secretaria_tecnica');
     protected $table = 'peticiones';
 
 

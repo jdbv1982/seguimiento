@@ -25,6 +25,7 @@ class SolicitudManager extends BaseManager {
 		$data = $this->checkCampo($data, 'ccp3');
 		$data = $this->checkCampo($data, 'ccp4');
 		$data = $this->checkCampo($data, 'atn_ciudadana');
+		$data = $this->checkCampo($data, 'secretaria_tecnica');
 
 		return $data;
 	}

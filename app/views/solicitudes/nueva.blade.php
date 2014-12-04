@@ -29,6 +29,7 @@
         {{Field::select('respuesta_id',null,null,$respuestas)}}
 
         {{Field::checkbox('atn_ciudadana')}}
+        {{Field::checkbox('secretaria_tecnica')}}
     </div>
     <div class="col-sm-8 col-lg-10">
         <legend>Datos Generales</legend>

@@ -26,47 +26,43 @@ class ReportesRepo {
 
     }
 
-/*    public function solicitudesReport($year = null, $direccion=null){
+    public function solicitudesReport($year, $direccion,$status, $residencia, $region, $municipio, $atn, $tecnica){
 
-        //$solicitudes = Solicitud::with(['respuesta','state','user','residencia','region','distrito','municipio','localidad',dirigidos','dirigidos.departamentos','tipo'])
+        $q = Solicitud::with(['respuesta','state','user','residencia','region','distrito','municipio','localidad','dirigidos','dirigidos.departamentos','tipo']);
 
-        $solicitudes = Solicitud::with(['respuesta','state','user','residencia','region','distrito','municipio','localidad',
-            'dirigidos','dirigidos.departamentos','tipo'])
-        ->where(function($q) use ($year, $direccion){
-                            if(! is_null($year)){
-                                   $q->where(DB::raw('YEAR(fecha_direccion)'), '=', $year);
-                            }
-             })->get();
+        if(! is_null($year)){
+            $q->where(DB::raw('YEAR(fecha_direccion)'), '=', $year);
+        }
 
-                return $solicitudes;
-    }*/
+        if(! is_null($year)){
+            $q->where(DB::raw('YEAR(fecha_direccion)'), '=', $year);
+        }
+        if(! is_null($direccion)){
+            $q->join('dirigidos', 'dirigidos.peticion_id', '=', 'peticiones.id')->where('dirigidos.departamento_id', $direccion);
+        }
+        if(! is_null($status)){
+            $q->whereIn('status_id', $status);
+        }
+        if(! is_null($residencia)){
+            $q->where('residencia_id','=',$residencia);
+        }
+        if(! is_null($region)){
+            $q->where('region_id','=',$region);
+        }
+        if(! is_null($municipio)){
+            $q->where('municipio_id','=',$municipio);
+        }
+         if(! is_null($atn)){
+            $q->where('atn_ciudadana','=',$atn);
+        }
+         if(! is_null($tecnica)){
+            $q->where('secretaria_tecnica','=',$tecnica);
+        }
 
-    public function solicitudesReport($year, $direccion,$status, $residencia, $region, $municipio){
 
-         $solicitudes = Solicitud::with(['respuesta','state','user','residencia','region','distrito','municipio','localidad','dirigidos','dirigidos.departamentos','tipo'])
-         ->join('dirigidos as d','d.peticion_id','=','peticiones.id')
-        ->where(function($q) use ($year, $direccion, $status, $residencia, $region, $municipio){
-                            if(! is_null($year)){
-                                   $q->where(DB::raw('YEAR(fecha_direccion)'), '=', $year);
-                            }
-                            if(! is_null($direccion)){
-                                   $q->where('d.departamento_id', '=', $direccion);
-                            }
-                            if(! is_null($status)){
-                                    $q->whereIn('status_id', $status);
-                            }
-                            if(! is_null($residencia)){
-                                    $q->where('residencia_id','=',$residencia);
-                            }
-                            if(! is_null($region)){
-                                    $q->where('region_id','=',$region);
-                            }
-                            if(! is_null($municipio)){
-                                    $q->where('municipio_id','=',$municipio);
-                            }
-             })->get();
+        $solicitudes = $q->get();
 
-            return $solicitudes;
+        return $solicitudes;
     }
 
 

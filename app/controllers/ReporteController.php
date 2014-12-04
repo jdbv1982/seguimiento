@@ -49,10 +49,11 @@ class ReporteController extends BaseController {
         $status = $this->prepareStatus();
         $residencia = Input::has('chkresidencia') ? Input::get('residencia') : null;
         $region = Input::has('chkregion') ? Input::get('region') : null;
+        $atn = Input::has('atn_ciudadana') ? Input::get('atn_ciudadana') : null;
+        $tecnica = Input::has('secretaria_tecnica') ? Input::get('secretaria_tecnica') : null;
         $municipio = Input::has('chkmunicipio') ? Input::get('municipio') : null;
 
-
-        $solicitudes = $this->reportesRepo->solicitudesReport($year, $direccion, $status, $residencia, $region, $municipio);
+        $solicitudes = $this->reportesRepo->solicitudesReport($year, $direccion, $status, $residencia, $region, $municipio, $atn, $tecnica);
 
         return $this->solicitudExcel->printInformacion($solicitudes, $nombre);
 
