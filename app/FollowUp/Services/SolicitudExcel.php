@@ -18,8 +18,8 @@ class SolicitudExcel extends BaseExcel{
 
 	public function setCabeceras($obj){
 	//($objPHPExcel,$rini,$rfin,$mensaje,$color='', $alinear='',$bordes='',$hgt = 0, $wrap = '', $moneda='', $width = 0)
-		$this->mergeCelda($obj, 'C4', 'C4', '# Folio','','CENTER','N',0,'Y','',0);
-		$this->mergeCelda($obj, 'D4', 'D4', 'Año','','CENTER','N',35,'Y','',0);
+		$this->mergeCelda($obj, 'C4', 'C4', 'Numero de Folio','','CENTER','N',0,'Y','',0);
+		$this->mergeCelda($obj, 'D4', 'D4', 'Periodo','','CENTER','N',35,'Y','',0);
 		$this->mergeCelda($obj, 'E4', 'E4', 'Comentario','','CENTER','N',0,'Y','',60);
 		$this->mergeCelda($obj, 'F4', 'F4', 'Instrucción','','CENTER','N',0,'Y','',60);
 		$this->mergeCelda($obj, 'G4', 'G4', 'Dirigido A:','','CENTER','N',0,'Y','',60);
@@ -37,8 +37,10 @@ class SolicitudExcel extends BaseExcel{
 		foreach ($solicitudes as $key => $dato) {
 			$dirigido_nombre = '';
 			foreach ($dato->dirigidos as $dirigido){
-           				$dirigido_nombre .=  " * " . $dirigido->departamentos->nombre;
+           				$dirigido_nombre .= $dirigido->departamentos->nombre .  " - ";
 			}
+
+			$dirigido_nombre = substr($dirigido_nombre, 0, $dirigido_nombre -3);
 
 			$obj->getActiveSheet()->setCellValue('C'.$i, $dato->id);
 			$obj->getActiveSheet()->setCellValue('D'.$i, date("Y", strtotime($dato->fecha_direccion)));
