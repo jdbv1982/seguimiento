@@ -27,12 +27,7 @@ class ReportesRepo {
     }
 
     public function solicitudesReport($year, $direccion,$status, $residencia, $region, $municipio, $atn, $tecnica){
-
         $q = Solicitud::with(['respuesta','state','user','residencia','region','distrito','municipio','localidad','dirigidos','dirigidos.departamentos','tipo']);
-
-        if(! is_null($year)){
-            $q->where(DB::raw('YEAR(fecha_direccion)'), '=', $year);
-        }
 
         if(! is_null($year)){
             $q->where(DB::raw('YEAR(fecha_direccion)'), '=', $year);
@@ -59,7 +54,7 @@ class ReportesRepo {
             $q->where('secretaria_tecnica','=',$tecnica);
         }
 
-
+        $q->select('peticiones.*');
         $solicitudes = $q->get();
 
         return $solicitudes;
